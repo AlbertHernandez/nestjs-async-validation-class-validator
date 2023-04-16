@@ -6,9 +6,9 @@ import {
 } from 'class-validator';
 import { UsersService } from '../users.service';
 
-@ValidatorConstraint({ name: 'UserExists', async: true })
+@ValidatorConstraint({ async: true })
 @Injectable()
-export class UserExistsRule implements ValidatorConstraintInterface {
+export class IsUserIdValidConstraint implements ValidatorConstraintInterface {
   constructor(private usersService: UsersService) {}
 
   async validate(value: string) {

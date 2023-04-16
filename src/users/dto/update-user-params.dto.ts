@@ -1,8 +1,8 @@
-import { IsNumberString, Validate } from 'class-validator';
-import { UserExistsRule } from '../validations/user-exists-rule';
+import { IsNumberString } from 'class-validator';
+import { IsUserIdValid } from '../validations/is-user-id-valid';
 
 export class UpdateUserParamsDto {
   @IsNumberString()
-  @Validate(UserExistsRule)
-  id: number;
+  @IsUserIdValid()
+  id: string;
 }
